@@ -48,7 +48,7 @@ function buildCharts(sample){
         // sliced Top 10 variables for bar/bubble
         var sliceIds = otuIds.slice(0,10);
         var sliceValues = sampleValues.slice(0,10);
-        var sliceLabels = otuLabelss.slice(0,10);
+        var sliceLabels = otuLabels.slice(0,10);
 
 
         // slice data for the bar/bubble TRACE1
