@@ -53,16 +53,18 @@ function buildCharts(sample){
         var otuLabels = finalResult.otu_labels;
 
         // sliced Top 10 variables for bar chart
-        var sliceIds = otuIds.slice(0,10);
-        var sliceValues = sampleValues.slice(0,10);
-        var sliceLabels = otuLabels.slice(0,10);
+        var sliceIds = otuIds.slice(0,10).reverse();
+        var sliceValues = sampleValues.slice(0,10).reverse();
+        var sliceLabels = otuLabels.slice(0,10).reverse();
 
 
         // slice data for the bar TRACE1
         var trace1 = {
-            x: sliceIds.reverse(),
-            y: sliceValues.reverse(),
-            text: sliceLabels.reverse(),
+            x: sliceIds,
+            y: sliceValues.map(function(a){
+                return `OTU ${a}`
+            }),
+            text: sliceLabels,
             type: "bar",
             orientation: "h",
         };
