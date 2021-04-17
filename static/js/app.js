@@ -4,10 +4,11 @@ function buildTable(sample){
         // console.log(data);
         // sample = 940;
         var metaData = data.metadata;
-        var results = metaData.filter(d => d.id === sample);
+        var results = metaData.filter(d => d.id == sample);
         var finalResult = results[0];
+        // console.log(finalResult);
         var demoData = d3.select("#sample-metadata");
-        panel.html("");
+        demoData.html("");
         Object.entries(finalResult).forEach(([key, value]) => {
             demoData.append("h6").text(`${key}: ${value}`)
         });
@@ -42,7 +43,7 @@ function optionChanged(name){
 function buildCharts(sample){
     d3.json("data/samples.json").then(data =>{
         var samples = data.samples;
-        var results = samples.filter(d => d.id === sample);
+        var results = samples.filter(d => d.id == sample);
         var finalResult = results[0];
         console.log(finalResult);
 
